@@ -18,6 +18,9 @@ NSUserDefaults 删除的时候，首先可以肯定的是内存中的值首先�
 ### 关于synchronize
 
 通常我们的印象是调用synchronize，系统会及时把值存储到本地.plist文件，不加的时候，好像就不会及时存储。我们先看看苹果的解释
+
+![synchronize](/NSUserDefault_Demo/NSUserDefault_Demo/synchronize.png)
+
 <img src=https://upload-images.jianshu.io/upload_images/1416772-dcb70bb799c71286.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000 img>
 
 很明显，苹果并不希望你手动去调用它，并且说他会阻塞调用线程，并且再接下来的版本会被标记成NS_DEPRECATED，下面我们还用实际测试情况来说明
