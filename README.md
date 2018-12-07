@@ -21,8 +21,6 @@ NSUserDefaults 删除的时候，首先可以肯定的是内存中的值首先�
 
 ![synchronize](/NSUserDefault_Demo/NSUserDefault_Demo/synchronize.png)
 
-<img src=https://upload-images.jianshu.io/upload_images/1416772-dcb70bb799c71286.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000 img>
-
 很明显，苹果并不希望你手动去调用它，并且说他会阻塞调用线程，并且再接下来的版本会被标记成NS_DEPRECATED，下面我们还用实际测试情况来说明
 
 经测试，不管是否调用synchronize，首先内存中会首先写入要存储的值，此时系统会开辟一个任务来处理把此值存入.plist文件。同样地，这个任务也并不是总是及时的，可能处于等待排队的状态，只有当此任务执行完毕值才会被正确地存储到本地，所以当任务中断的时候，会出现写入之后下次读取为空的情况。但几乎和你是否调用synchronize，是没有必然关系的。
