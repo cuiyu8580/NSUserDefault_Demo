@@ -23,11 +23,11 @@
     
     
 //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-//    
+//
 //    NSString *libPath = [paths objectAtIndex:0];
-//    
+//
 //    NSString *prePath = [libPath stringByAppendingPathComponent:@"Preferences"];
-//    
+//
 //    NSLog(@"Preferences路径:%@",prePath);
     
     NSLog(@"输出结果:%@",[defaults objectForKey:@"key"]);
@@ -39,7 +39,7 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"1234" forKey:@"key"];
-    [defaults synchronize];
+    //[defaults synchronize];
     
     NSLog(@"存入内容:%@",[defaults objectForKey:@"key"]);
     
@@ -50,23 +50,39 @@
 {
     
     
+    
+    NSString *key = [@"key" stringByAppendingFormat:@"%d", [self getRandomNumber:0 to:100]];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    [defaults setObject:key forKey:key];
+    
+    //[defaults synchronize];
+    
+    NSLog(@"存入内容:%@",[defaults objectForKey:key]);
+    
+}
+
+
+- (IBAction)btn3Click:(id)sender {
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     NSDictionary *dictionary = [defaults dictionaryRepresentation];
     for(NSString *key in [dictionary allKeys]){
         
         [defaults removeObjectForKey:key];
-        [defaults synchronize];
-
-
+//        [defaults synchronize];
+        
+        
     }
     
     NSLog(@"清空后内容:%@",[defaults objectForKey:@"key"]);
     
 }
 
-
-- (IBAction)btn3Click:(id)sender {
+- (IBAction)btn4Click:(id)sender {
     
     NSString *extension = @"plist";
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -92,15 +108,20 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-//    [defaults setObject:@"111" forKey:@"mmm"];
-//
-//    [defaults synchronize];
-
+    //    [defaults setObject:@"keys" forKey:@"keys"];
+    //
+    //    [defaults synchronize];
+    
     
     NSLog(@"清空后内容:%@",[defaults objectForKey:@"key"]);
     
 }
 
+
+-(int)getRandomNumber:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to - from + 1)));
+}
 
 
 @end

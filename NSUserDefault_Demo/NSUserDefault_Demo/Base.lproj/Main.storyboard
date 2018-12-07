@@ -25,20 +25,28 @@
                                     <action selector="btn1Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GI5-jA-RVI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LvO-qt-aR1">
+                                <rect key="frame" x="136" y="236" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="存储(再次存储)"/>
+                                <connections>
+                                    <action selector="btn2Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwO-Cc-o0I"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Una-QJ-I9x">
-                                <rect key="frame" x="118" y="243" width="138" height="30"/>
+                                <rect key="frame" x="118" y="346" width="138" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="清空(删除key值)"/>
                                 <connections>
-                                    <action selector="btn2Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dba-uf-3x3"/>
+                                    <action selector="btn3Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jT9-ki-B7H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H5G-uK-vr5">
-                                <rect key="frame" x="80" y="370" width="215" height="30"/>
+                                <rect key="frame" x="80" y="465" width="215" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="清空(删除plist文件)"/>
                                 <connections>
-                                    <action selector="btn3Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxv-94-TAr"/>
+                                    <action selector="btn4Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nny-7K-8cR"/>
                                 </connections>
                             </button>
                         </subviews>
